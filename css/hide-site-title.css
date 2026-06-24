@@ -1,0 +1,102 @@
+#site-info #site-title {
+  display: none;
+}
+
+/* 搜索按钮置最右边 */
+#nav #menus {
+  display: flex;
+  align-items: center;
+}
+#nav #search-button {
+  order: 2;
+}
+
+/* ========== 首页文章卡片简化样式 ========== */
+
+/* 卡片高度自适应，去掉固定高度 */
+#recent-posts .recent-post-item {
+  height: auto !important;
+  padding: 16px 20px;
+  gap: 20px;
+}
+
+/* 自动生成的纯色封面 */
+.post_cover_auto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.post_cover_auto .cover-keyword {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0,0,0,.15);
+  opacity: .9;
+}
+
+/* 真实图片封面也缩小 */
+#recent-posts .recent-post-item .post_cover {
+  width: 110px !important;
+  height: 110px !important;
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+#recent-posts .recent-post-item .post_cover .post-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 右侧内容区域 */
+#recent-posts .recent-post-item > .recent-post-info {
+  flex: 1;
+  padding: 4px 0 !important;
+  width: auto !important;
+}
+
+/* 标题加大加粗 */
+#recent-posts .recent-post-item .article-title {
+  font-size: 1.25em !important;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* 底部 meta 行：日期 + 作者 */
+.post-meta-simple {
+  color: #999;
+  font-size: .85em;
+}
+.post-meta-simple i {
+  margin-right: 4px;
+}
+.post-meta-sep {
+  margin: 0 10px;
+  color: #ddd;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  #recent-posts .recent-post-item {
+    flex-direction: row !important;
+    padding: 12px 14px;
+    gap: 14px;
+  }
+  .post_cover_auto,
+  #recent-posts .recent-post-item .post_cover {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 8px;
+  }
+  .post_cover_auto .cover-keyword {
+    font-size: 30px;
+  }
+  #recent-posts .recent-post-item .article-title {
+    font-size: 1.05em !important;
+  }
+}
